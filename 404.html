@@ -50,7 +50,7 @@
         if (segments[1] == 's') {
             (async function(){
                 console.log('Redirect to '+segments[2])
-                document.body.innerHTML = '<div class="container"><h1>Redirecting</h1></div>'
+                document.querySelectorAll('div').forEach((el) => el.remove())
                 var res = await fetch('https://raw.githubusercontent.com/dauser-dev/dauser-dev.github.io/main/misc/redirects')
                 var text = res.text()
                 var args = text.split('\\')
