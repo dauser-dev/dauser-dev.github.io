@@ -45,6 +45,13 @@
       }
 
     </style>
+    <script>
+        var u = window.location
+        var segments = u.split('/')
+        if (segments[1] == 's') {
+            console.log('Redirect to '+segments[2])
+        }
+    </script>
   </head>
   <body>
 
