@@ -51,7 +51,8 @@
             console.log('Redirect to '+segments[2])
             document.body.innerHTML = '<div class="container"><h1>Redirecting</h1></div>'
             var res = await fetch('https://raw.githubusercontent.com/dauser-dev/dauser-dev.github.io/main/misc/redirects')
-            var args = res.split('\\')
+            var text = res.text()
+            var args = text.split('\\')
             var ind = args.findIndex((el) => el == segments[2])
             if (ind != undefined) {
                 window.location.replace(args[ind+1]);
