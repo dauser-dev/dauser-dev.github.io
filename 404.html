@@ -52,7 +52,7 @@
                 console.log('Redirect to '+segments[2])
                 document.querySelectorAll('div').forEach((el) => el.remove())
                 var res = await fetch('https://raw.githubusercontent.com/dauser-dev/dauser-dev.github.io/main/misc/redirects')
-                var text = res.text()
+                var text = await res.text()
                 console.log(text)
                 var args = text.split('\\')
                 var ind = args.findIndex((el) => el == segments[2])
